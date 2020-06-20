@@ -3,10 +3,12 @@ sign up and login screens using NativeBase(BoilerPlate). Also include react navi
 
 Screenshots: 
 <br>
-<img src="image/1.png" />
-<br> 
-<img src="image/2.png" />
 <br>
-<img src="image/3.png" />
+<img src="image/1.png" width="100" />
+<br> 
+<img src="image/2.png" width="100" />
+<br>
+<img src="image/3.png" width="100" />
 <br>
  
+
