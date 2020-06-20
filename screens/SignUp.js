@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { ActivityIndicator} from 'react-native'
 import { Card,Container, Header, Content, Form, Item, Input, Label,Button,Text } from 'native-base';
 export default class SignUp extends Component {
+  state={isLoading:false}
   render() {
     return (
       <Container>
@@ -20,8 +22,9 @@ export default class SignUp extends Component {
               <Input secureTextEntry={true} />
             </Item>
             
-                <Button style={{justifyContent:'center',marginVertical:20}}>
-                <Text>Sign Up</Text>
+                <Button onPress={()=>{this.setState({isLoading:true})}} style={{justifyContent:'center',marginVertical:20}}>
+                {!this.state.isLoading &&<Text>Sign Up</Text>}
+                {this.state.isLoading &&  <ActivityIndicator size="small" color="white"  />}
                 </Button>
           
           </Form>

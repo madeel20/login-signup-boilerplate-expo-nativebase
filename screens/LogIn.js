@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ActivityIndicator} from 'react-native'
 import {
   Card,
   Container,
@@ -9,9 +10,10 @@ import {
   Input,
   Label,
   Button,
-  Text,
+  Text
 } from "native-base";
 export default class LogIn extends Component {
+  state={isLoading:false}
   render() {
     return (
     //   <Container style={{ marginTop: "25%", padding: 20 }}>
@@ -30,9 +32,13 @@ export default class LogIn extends Component {
                 <Input secureTextEntry={true} />
               </Item>
 
-              <Button style={{ justifyContent: "center", marginTop: 20 }}>
-                <Text>Log In</Text>
+              
+              <Button onPress={()=>{this.setState({isLoading:true})}} style={{ justifyContent: "center", marginTop: 20 }}>
+              {!this.state.isLoading &&<Text>Log In</Text>}
+                {this.state.isLoading &&  <ActivityIndicator size="small" color="white"  />}
               </Button>
+
+              
               <Button onPress={() => this.props.navigation.navigate('Sign Up')} transparent style={{ justifyContent: "center",marginTop:5 }}>
                 <Text>Sign Up</Text>
               </Button>
